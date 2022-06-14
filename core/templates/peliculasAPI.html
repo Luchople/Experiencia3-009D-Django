@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+	{% load static %}
+	<link rel="stylesheet" href= "{% static 'css/estilosAPI.css' %}">
+	<title>Sitio de peliculas</title>
+</head>
+<body>
+	{% load static %}
+	<!--- Barra de inicio --->
+
+    <header class="header">
+        <div class="logo-header">
+            <img src="{% static 'img/LogoDefinitivo.png' %}" alt="logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="{% url 'indexd'%}">Inicio</a></li> 
+                <li><a href="{% url 'QuienesSomos'%}">Quiénes Somos</a></li> 
+                <li><a href="{% url 'galeria'%}"> Galeria</a></li>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn btn-success">Cerrar Sesión</a>
+                {% else %} 
+                <a href="{% url 'login' %}" class="btn btn-success">Iniciar Sesión</a>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+	
+	<div class="contenedor" id="contenedor"></div>
+
+	<div class="paginacion">
+		<button id="btnAnterior">Anterior</button>
+		<button id="btnSiguiente">Siguiente</button>
+	</div>
+
+	<script src="{% static 'js/app.js' %}"></script>
+</body>
+</html>

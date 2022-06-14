@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilosxd.css' %}">
+    <!---scrip para linkear los iconos-->
+    <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+    <title>Inicio</title>
+
+</head>
+
+<body>
+
+
+    <!--- Barra de inicio --->
+
+    <header class="header">
+        <div class="logo-header">
+            <img src= "{% static 'img/LogoDefinitivo.png' %}" alt="logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="{% url 'indexd' %}">Inicio</a></li> 
+                <li><a href="{% url 'QuienesSomos' %}">Quiénes Somos</a></li> 
+                <li><a href="{% url 'galeria' %}"> Galeria</a></li>
+                
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}" class="btn btn-success">Cerrar Sesión</a>
+                {% else %} 
+                <a href="{% url 'login' %}" class="btn btn-success">Iniciar Sesión</a>
+                {% endif %}
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="main">
+        <div class="container">
+            <br>
+            <h1> Mascotudos </h1>
+            <br>
+            <p class="texto-big"> El término "Mascotudos" fue creado por Luis Vera, profesor y Médico Veterinario de
+                DuocUC.
+                El término amigal designa a un animal que en virtud de su conducta y sustrato neurológico, asumimos que
+                posee un estado mental específico que no es propio de la especie silvestre y que emerge bajo las
+                condiciones de afecto mutuo con un ser humano y la integración de su existencia al mundo antrópico
+                (Briones, 2014).
+                Para nosotros, Amigales representa la relación afectiva entre un humano y un animal que emerge de la
+                sociedad de hoy en día. Significa sincerar los sentimientos de las personas frente a sus mascotas y
+                reconocer que ese sentimiento es mutuo.</p>
+
+
+
+        </div>
+        </header>
+    </main>
+
+    <br>
+
+    <!---- carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex w-100 justify-content-center">
+                    <img src="{% static 'img/perro4k.jpg' %}" class="d-block" alt="..." height="500">
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex w-100 justify-content-center">
+
+                    <img src="{% static 'img/gatox4k.jpg' %}" class="d-block" alt="..." height="500">
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+                <div class="d-flex w-100 justify-content-center">
+                    <img src="{% static 'img/perro2k.jpg' %}"  class="d-block" alt="..." height="500">
+
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+    <br>
+
+    <h2 id="titulo2"> Próximamente seremos un Hotel y Guardería para mascotas</h2>
+
+    <h2 id="titulo2">SIN JAULAS NI KENNEL</h2>
+    <h3 id="titulo3">
+
+        Para nuestros amados felinos contamos con 6 suites exclusivas NO juntamos gatitos ni perros de diferentes dueños
+        de esta forma evitamos peleas y estrés.</h3>
+    <h3 id="titulo3"> Diversión total con espacios acondicionados completamente para ellos.
+        Reportes diarios con fotos y videos, podrás saber que hace, cómo está en todo momento. </h3>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="textopeli">
+        <h2> ¡Nueva Implementación a la Página Mascotudos!</h2>
+        <br>
+        <br>
+        <h3> Actualmente el doctor Luis Vera implementó una nueva api para poder ver las películas más populares 
+            del cine junto a su mascota.</h3> <h3>Con un costo totalmente gratis para poder disfrutar desde la comodidad de su hogar junto a su mascotudo</h3>
+            
+        <br>
+        <br>
+            <ul>
+            <a href="{% url 'peliculasAPI'%}"><h3>Haz Click Aquí para ver el catálogo</h3></a>
+            </ul>
+            <br>
+            <br>
+            
+        
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <body onload="startTime()">
+
+        <div class="clockdate">
+            <span id="time"></span>
+            <span id="date"></span>
+        </div>
+    
+        <script>
+            function startTime() {
+                //declaramos las  variables que nos proporcionaran los datos como la hora, minutos etc.
+    
+                var today = new Date(),
+                    hours = today.getHours(),
+                    minutes = today.getMinutes(),
+                    date = today.getDate(),
+                    day = today.getDay(),
+                    month = today.getMonth();
+    
+                //utilizaremos operadores ternarios esto nos ayudara a mostrar la hora solo del 1 al 12
+                hours = (hours == 0) ? 12 : hours;
+                hours = (hours > 12) ? hours - 12 : hours;
+    
+                //pasaremos las horas y minutos a una funcion que crearemos mas adelante
+                hours = checkTime(hours);
+                minutes = checkTime(minutes);
+    
+                //primero para los dias y meses crearemos un arreglo esto por que la funcion que nos debuelve
+                //los dias y meses nos los debuelbe en numero
+                var dia = ["Domingo", " Lunes", "Martes", "Miercoles", "Jueves", "viernes", "Sabado"],
+                    mes = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+                //haora solo imprimimos los datos
+                var hr = document.getElementById('time').innerHTML = hours + ":" + minutes,
+                    dt = document.getElementById('date').innerHTML = dia[day] + ", " + date + " De " + mes[month];
+    
+                //esta funcion hara que nuestro escript se ejecute constantemente
+                var time = setTimeout(function() {
+                    startTime();
+                }, 500);
+    
+    
+    
+    
+            }
+            //solo falta crear la funcion que nos diga si tine uno o dos dijitos
+            //esto para que si solo tiene uno le agrege u  cero a la izquierda
+            function checkTime(e) {
+                if (e < 10) {
+                    e = "0" + e;
+                }
+                return e;
+            }
+        </script>
+
+    <!----- Pie de Pagina ----->
+
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="{% static 'img/LogoDefinitivo.jpg' %}" alt="Logo de SLee Dw">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE MÍ</h2>
+                <p>Hola mundo, soy un estudiante programador de DuocUC, soy amante de los animales.</p>
+                <p>Por lo tanto he desarrollado esta página para que puedan darle amor a sus mascotas con los productos
+                    que ofrezco.</p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitch"></a>
+                    <a href="#" class="fa fa-git"></a>
+
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <small>&copy; 2022 <b>Luis Vera </b> - Todos los derechos han sido reservados.</small>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+        
+    
+        
+        
+    </body>
+</html>
