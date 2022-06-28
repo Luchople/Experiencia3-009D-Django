@@ -6,6 +6,9 @@ class Cliente (models.Model):
     nombre = models.CharField(max_length=25, verbose_name='nombre') 
     apellido = models.CharField(max_length=50, verbose_name='apellido')
     rut = models.CharField(max_length=9, primary_key=True, verbose_name='rut') 
+    correo = models.CharField(max_length=50, default="abc", verbose_name='correo')
+    telefono = models.IntegerField(verbose_name='telefono', default="123")
+    direccion = models.CharField(max_length=50, verbose_name='direccion', default="abc")
 
     def __str__(self):
         return self.rut

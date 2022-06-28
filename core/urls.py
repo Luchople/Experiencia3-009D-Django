@@ -2,7 +2,7 @@ from django.urls import path
 from .views import indexd, QuienesSomos, contacto, galeria, formularioRegistro, peliculasAPI
 
 urlpatterns =[
-    path ('/', indexd, name="indexd"),
+    path ('', indexd, name="indexd"),
 
     path ('QuienesSomos', QuienesSomos, name="QuienesSomos"),
 
@@ -16,7 +16,6 @@ urlpatterns =[
 
 
 
-    
-]
+    ]
 
 
